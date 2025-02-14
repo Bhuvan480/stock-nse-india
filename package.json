@@ -14,9 +14,9 @@
     "node": ">=12"
   },
   "scripts": {
-    "remove-build": "rimraf ./build",
+    
     "copy-graphql": "copyfiles -f ./src/**/*.graphql build/graphql-schema",
-    "prebuild": "yarn remove-build",
+    
     "build": "tsc",
     "postbuild": "yarn copy-graphql",
     "prestart": "yarn build",
