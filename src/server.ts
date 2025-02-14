@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
-import express from 'express'
+import express from 'express';
+import cors from 'cors';
 import http from 'http';
 import swaggerUi from 'swagger-ui-express'
 import { ApolloServer } from 'apollo-server-express';
@@ -17,6 +18,7 @@ const app = express()
 const port = process.env.PORT || 3000
 const hostUrl = process.env.HOST_URL || `http://localhost:${port}`
 
+app.use(cors())
 app.use(mainRouter)
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(openapiSpecification));
 
